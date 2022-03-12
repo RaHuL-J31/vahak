@@ -1,12 +1,10 @@
 import { useState } from "react";
-import { Formik, Form, Field, ErrorMessage } from "formik";
-import SourceDestination from "../Components/SourceDestination";
+import SourceDestination from "./SourceDestination";
 
 import AddBidAmmount from "./AddBidAmmount";
-import * as Yup from "yup";
+
 import VerifyOtp from "./VerifyOtp";
-import VerifyOtp1 from "./VerifyOtp1";
-import Summary from "./Summary";
+import Summary from "../Components/Summary";
 
 export default function Main() {
   const [data, setData] = useState({
@@ -15,11 +13,9 @@ export default function Main() {
     carType: "",
     passengers: "",
     bidPrice: "",
-    rateNegotiable: "",
     phoneNo: "",
     name: "",
     remarks: "",
-    getUpdatesWhatsapp: "",
     otp: "",
   });
   const [currentStep, setCurrentStep] = useState(0);
