@@ -33,7 +33,7 @@ const AddBidAmmount = (props) => {
           <Address
             labelValue="JOURNEY DETAILS"
             firstValue={`${formik.values.source} - ${formik.values.destination}`}
-            secondValue={`${formik.values.passengers} persons,${formik.values.cartype}`}
+            secondValue={`${formik.values.passengers} persons,${formik.values.carType}`}
           />
           <button
             onClick={() => props.prev(formik.values)}

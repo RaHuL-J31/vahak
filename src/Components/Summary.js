@@ -16,12 +16,13 @@ const validationSchema = yup.object({
   source: yup.string("Enter your email").required("Email is required"),
 });
 
-const VerifyOtp = (props) => {
+const Summary = (props) => {
   const formik = useFormik({
     initialValues: props.data,
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      values.otp === "1234" ? props.next(values) : alert("Enter OTP");
+      props.next(values, true);
+      alert("Bid Placed Sucessfully");
     },
   });
   return (
@@ -32,7 +33,7 @@ const VerifyOtp = (props) => {
           <Address
             labelValue="JOURNEY DETAILS"
             firstValue={`${formik.values.source} - ${formik.values.destination}`}
-            secondValue={`${formik.values.passengers} persons,${formik.values.carType}`}
+            secondValue={`${formik.values.passengers} persons,${formik.values.cartype}`}
           />
           <button
             onClick={() => props.prev(formik.values)}
@@ -54,35 +55,6 @@ const VerifyOtp = (props) => {
           </div>
         </div>
         <hr />
-        <div className="otp-div min-width">
-          <span>
-            We've sent OTP to your mobile number.Pkease enter it below to submit
-            your bid <b>{formik.values.phoneNo}</b>{" "}
-            <button
-              onClick={() => props.prev(formik.values)}
-              className="edit-btn"
-            >
-              Edit
-            </button>
-          </span>
-        </div>
-        <div className="add-otp min-width">
-          <span>₹</span>
-          <TextField
-            variant="standard"
-            margin="normal"
-            fullWidth
-            id="otp"
-            name="otp"
-            placeholder="0000"
-            value={formik.values.otp}
-            onChange={formik.handleChange}
-            InputProps={{
-              disableUnderline: true,
-              style: { fontSize: 50 },
-            }}
-          />
-        </div>
         <div className="min-width">
           <Button
             id="btn-verify"
@@ -90,7 +62,7 @@ const VerifyOtp = (props) => {
             variant="contained"
             fullWidth={true}
           >
-            Verify via OTP
+            Submit Bid
           </Button>
         </div>
       </form>
@@ -98,4 +70,4 @@ const VerifyOtp = (props) => {
   );
 };
 
-export default VerifyOtp;
+export default Summary;
