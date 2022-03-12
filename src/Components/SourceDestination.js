@@ -6,7 +6,9 @@ import { TextField, MenuItem, Button } from "@mui/material";
 import Banner from "./Banner";
 
 const validationSchema = yup.object({
-  source: yup.string().required(),
+  source: yup.string().required("Please enter Source"),
+  destination: yup.string().required("Please enter Destination"),
+  carType: yup.string().required("Please select Cartype"),
 });
 
 const SourceDestination = (props) => {
@@ -42,7 +44,7 @@ const SourceDestination = (props) => {
     <div>
       <form onSubmit={formik.handleSubmit}>
         <Banner step={props.currentStep + 1} />
-        <div className="bid1">
+        <div className="bid1 min-width">
           <div className="location">
             <TextField
               fullWidth
@@ -52,6 +54,8 @@ const SourceDestination = (props) => {
               value={formik.values.source}
               onChange={formik.handleChange}
               size="small"
+              error={formik.touched.source && Boolean(formik.errors.source)}
+              helperText={formik.touched.source && formik.errors.source}
               InputLabelProps={{
                 shrink: true,
               }}
@@ -65,6 +69,12 @@ const SourceDestination = (props) => {
               value={formik.values.destination}
               onChange={formik.handleChange}
               size="small"
+              error={
+                formik.touched.destination && Boolean(formik.errors.destination)
+              }
+              helperText={
+                formik.touched.destination && formik.errors.destination
+              }
               InputLabelProps={{
                 shrink: true,
               }}
@@ -79,6 +89,8 @@ const SourceDestination = (props) => {
               label="Enter Car Type"
               value={formik.values.carType}
               onChange={formik.handleChange}
+              error={formik.touched.carType && Boolean(formik.errors.carType)}
+              helperText={formik.touched.carType && formik.errors.carType}
             >
               {carOptions.map((option) => (
                 <MenuItem key={option.label} value={option.value}>
@@ -92,7 +104,7 @@ const SourceDestination = (props) => {
               fullWidth
               id="passengers"
               name="passengers"
-              label="Number of Travellers*"
+              label="Number of Travellers"
               value={formik.values.passengers}
               onChange={formik.handleChange}
               size="small"

@@ -50,8 +50,6 @@
 
 .bid1 {
   padding-top: 2rem;
-  width: 35%;
-  margin: auto;
 }
 
 .bid1 .location {
@@ -73,8 +71,6 @@
 
 .bid-amt-address {
   padding-top: 2rem;
-  width: 35%;
-  margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -122,8 +118,6 @@ hr {
 }
 
 .add-amount {
-  width: 35%;
-  margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

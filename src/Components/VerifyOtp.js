@@ -21,14 +21,14 @@ const VerifyOtp = (props) => {
     initialValues: props.data,
     validationSchema: validationSchema,
     onSubmit: (values) => {
-      values.otp === "1234" ? props.next(values) : alert("Enter OTP");
+      values.otp === "1234" ? props.next(values) : alert("Enter valid OTP");
     },
   });
   return (
     <div>
       <form onSubmit={formik.handleSubmit}>
         <Banner step={props.currentStep + 1} />
-        <div className="bid-amt-address">
+        <div className="bid-amt-address min-width">
           <Address
             labelValue="JOURNEY DETAILS"
             firstValue={`${formik.values.source} - ${formik.values.destination}`}
@@ -42,7 +42,7 @@ const VerifyOtp = (props) => {
           </button>
         </div>
         <hr />
-        <div className="bid-amt-address">
+        <div className="bid-amt-address min-width">
           <Address
             labelValue="BID Details"
             firstValue={formik.values.phoneNo}
