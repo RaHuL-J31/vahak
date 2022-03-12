@@ -2,8 +2,9 @@ import { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import SourceDestination from "../Components/SourceDestination";
 
-import AddBidAmmount from "../Components/AddBidAmmount";
+import AddBidAmmount from "./AddBidAmmount";
 import * as Yup from "yup";
+import VerifyOtp from "./VerifyOtp";
 
 export default function Main() {
   const [data, setData] = useState({
@@ -41,6 +42,12 @@ export default function Main() {
       data={data}
     />,
     <AddBidAmmount
+      currentStep={currentStep}
+      next={handleNextStep}
+      prev={handlePrevStep}
+      data={data}
+    />,
+    <VerifyOtp
       currentStep={currentStep}
       next={handleNextStep}
       prev={handlePrevStep}

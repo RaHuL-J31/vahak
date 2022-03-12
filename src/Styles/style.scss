@@ -5,6 +5,10 @@
   padding: 0px;
   font-family: sans-serif;
 }
+.min-width {
+  width: 35%;
+  margin: auto;
+}
 .banner {
   margin: 0px;
   background-color: $navbarBackground;
@@ -91,6 +95,23 @@ hr {
     font-size: 40px;
     padding-right: 3px;
   }
+}
+.add-address {
+  div {
+    padding-top: 10px;
+  }
+}
+#priceId {
+  color: black;
+  font-size: 40px;
+}
 
-  background-color: aqua;
+.otp-div {
+  padding-top: 10px;
+  .edit-btn {
+    color: $primaryColor;
+    border: none;
+    outline: none;
+    background: white;
+  }
 }

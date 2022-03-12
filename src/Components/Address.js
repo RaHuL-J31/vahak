@@ -1,15 +1,12 @@
 import React from "react";
 
-const Address = ({ source, destination, passengers, cartype }) => {
+const Address = ({ labelValue, firstValue, secondValue, thirdValue = "" }) => {
   return (
     <div className="journey-details">
-      <h6>JOURNEY DETAILS</h6>
-      <span>
-        {source} - {destination}
-      </span>
-      <span>
-        {passengers} persons,{cartype}
-      </span>
+      <h6>{labelValue}</h6>
+      <span>{firstValue}</span>
+      <span>{secondValue}</span>
+      <span>{thirdValue}</span>
     </div>
   );
 };

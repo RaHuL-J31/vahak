@@ -4,6 +4,11 @@
   font-family: sans-serif;
 }
 
+.min-width {
+  width: 35%;
+  margin: auto;
+}
+
 .banner {
   margin: 0px;
   background-color: #08123b;
@@ -127,12 +132,31 @@ hr {
           align-items: center;
   height: 150px;
   padding-left: 10%;
-  background-color: aqua;
 }
 
 .add-amount span {
   color: black;
   font-size: 40px;
   padding-right: 3px;
+}
+
+.add-address div {
+  padding-top: 10px;
+}
+
+#priceId {
+  color: black;
+  font-size: 40px;
+}
+
+.otp-div {
+  padding-top: 10px;
+}
+
+.otp-div .edit-btn {
+  color: #0f53fb;
+  border: none;
+  outline: none;
+  background: white;
 }
 /*# sourceMappingURL=style.css.map */
