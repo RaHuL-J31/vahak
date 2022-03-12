@@ -67,7 +67,6 @@ const VerifyOtp = (props) => {
           </span>
         </div>
         <div className="add-otp min-width">
-          <span>₹</span>
           <TextField
             variant="standard"
             margin="normal"

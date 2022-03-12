@@ -6,7 +6,7 @@
   font-family: sans-serif;
 }
 .min-width {
-  width: 35%;
+  width: 30%;
   margin: auto;
 }
 .banner {
@@ -29,6 +29,7 @@
     display: flex;
     align-items: center;
     padding-left: 30px;
+    color: $navbarBackground;
   }
 }
 
@@ -107,5 +108,27 @@ hr {
     border: none;
     outline: none;
     background: white;
+  }
+}
+@media screen and (max-width: 992px) {
+  .min-width,
+  hr {
+    width: 55%;
+    margin: auto;
+  }
+  .banner {
+    height: 15vh;
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .min-width,
+  hr {
+    width: 95%;
+    margin: auto;
+  }
+  .banner {
+    height: 15vh;
+    font-size: 1.5rem;
   }
 }
