@@ -23,7 +23,7 @@ const SourceDestination = (props) => {
   useEffect(() => {
     formik.values.carType == "SUV"
       ? (formik.values.passengers = 6)
-      : (formik.values.passengers = 5);
+      : (formik.values.passengers = 4);
   }, [formik.values.carType]);
 
   const carOptions = [
@@ -65,7 +65,7 @@ const SourceDestination = (props) => {
               fullWidth
               id="destination"
               name="destination"
-              label="Source Destination*"
+              label="Destination Location*"
               value={formik.values.destination}
               onChange={formik.handleChange}
               size="small"
