@@ -27,7 +27,8 @@ export default function Main() {
   const handleNextStep = (newdata, final = false) => {
     setData((prev) => ({ ...prev, ...newdata }));
     if (final) {
-      console.log("End", newdata);
+      console.log("BID SUBMITTED");
+      console.log(newdata);
       return;
     }
     setCurrentStep((prev) => prev + 1);
