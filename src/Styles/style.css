@@ -65,4 +65,74 @@
 .bid1 .btn {
   width: 100%;
 }
+
+.bid-amt-address {
+  padding-top: 2rem;
+  width: 35%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.bid-amt-address button {
+  color: #0f53fb;
+  border: none;
+  background: white;
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.journey-details {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-bottom: 12px;
+}
+
+.journey-details h6 {
+  font-size: small;
+  color: grey;
+  font-weight: 600;
+}
+
+.journey-details span {
+  font-size: large;
+  font-weight: 700;
+}
+
+hr {
+  width: 35%;
+  margin: auto;
+}
+
+.add-amount {
+  width: 35%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 150px;
+  padding-left: 10%;
+  background-color: aqua;
+}
+
+.add-amount span {
+  color: black;
+  font-size: 40px;
+  padding-right: 3px;
+}
 /*# sourceMappingURL=style.css.map */

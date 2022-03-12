@@ -44,3 +44,53 @@
     width: 100%;
   }
 }
+
+.bid-amt-address {
+  padding-top: 2rem;
+  width: 35%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  button {
+    color: $primaryColor;
+    border: none;
+    background: white;
+    margin: 0px;
+    padding: 0px;
+    align-items: flex-start;
+  }
+}
+.journey-details {
+  display: flex;
+  flex-direction: column;
+  h6 {
+    font-size: small;
+    color: grey;
+    font-weight: 600;
+  }
+  span {
+    font-size: large;
+    font-weight: 700;
+  }
+  padding-bottom: 12px;
+}
+
+hr {
+  width: 35%;
+  margin: auto;
+}
+.add-amount {
+  width: 35%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  height: 150px;
+  padding-left: 10%;
+  span {
+    color: black;
+    font-size: 40px;
+    padding-right: 3px;
+  }
+
+  background-color: aqua;
+}

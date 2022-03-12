@@ -14,12 +14,10 @@ const SourceDestination = (props) => {
     initialValues: props.data,
     validationSchema: validationSchema,
     onSubmit: (values) => {
+      console.log(values);
       props.next(values);
     },
   });
-
-  const [carTypeSelected, setCarTypeSelected] = useState("HatchBack");
-  const [passengerCount, setPassengerCount] = useState(5);
 
   //   const handleChange = (event) => {
   //     event.preventDefault();

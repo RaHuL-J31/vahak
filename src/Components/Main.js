@@ -40,7 +40,12 @@ export default function Main() {
       next={handleNextStep}
       data={data}
     />,
-    <AddBidAmmount next={handleNextStep} prev={handlePrevStep} data={data} />,
+    <AddBidAmmount
+      currentStep={currentStep}
+      next={handleNextStep}
+      prev={handlePrevStep}
+      data={data}
+    />,
   ];
   return <div className="App">{steps[currentStep]}</div>;
 }
