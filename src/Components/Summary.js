@@ -23,17 +23,19 @@ const Summary = (props) => {
     onSubmit: (values) => {
       props.next(values, true);
       alert("Bid Placed Sucessfully");
+      // alert(JSON.stringify(values, null, 2));
+      window.location.href = "/";
     },
   });
   return (
     <div>
       <form onSubmit={formik.handleSubmit}>
         <Banner step={props.currentStep + 1} />
-        <div className="bid-amt-address">
+        <div className="bid-amt-address min-width">
           <Address
             labelValue="JOURNEY DETAILS"
             firstValue={`${formik.values.source} - ${formik.values.destination}`}
-            secondValue={`${formik.values.passengers} persons,${formik.values.cartype}`}
+            secondValue={`${formik.values.passengers} persons,${formik.values.carType}`}
           />
           <button
             onClick={() => props.prev(formik.values)}
@@ -43,7 +45,7 @@ const Summary = (props) => {
           </button>
         </div>
         <hr />
-        <div className="bid-amt-address">
+        <div className="bid-amt-address min-width">
           <Address
             labelValue="BID Details"
             firstValue={formik.values.phoneNo}

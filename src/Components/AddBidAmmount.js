@@ -12,7 +12,17 @@ import {
 import Banner from "./Banner";
 import Address from "./Address";
 const validationSchema = yup.object({
-  source: yup.string("Enter your email").required("Email is required"),
+  bidPrice: yup.number("Enter Valid Price").required("Please enter Bid Price"),
+  phoneNo: yup
+    .string()
+    .required("Please enter phone no")
+    .matches(
+      /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
+      "Phone number is not valid"
+    )
+    .min(10)
+    .max(10, "Please enter only 10 digits"),
+  name: yup.string().required("Please enter name"),
 });
 const AddBidAmmount = (props) => {
   const formik = useFormik({
@@ -29,21 +39,21 @@ const AddBidAmmount = (props) => {
     <div>
       <form onSubmit={formik.handleSubmit}>
         <Banner step={props.currentStep + 1} />
-        <div className="bid-amt-address">
+        <div className="bid-amt-address min-width">
           <Address
             labelValue="JOURNEY DETAILS"
             firstValue={`${formik.values.source} - ${formik.values.destination}`}
-            secondValue={`${formik.values.passengers} persons,${formik.values.carType}`}
+            secondValue={`${formik.values.passengers} Persons, ${formik.values.carType}`}
           />
           <button
             onClick={() => props.prev(formik.values)}
             className="edit-btn"
           >
-            Edit
+            <b>Edit</b>
           </button>
         </div>
         <hr />
-        <div className="add-amount">
+        <div className="add-amount min-width">
           <span>₹</span>
           <TextField
             variant="standard"
@@ -54,6 +64,8 @@ const AddBidAmmount = (props) => {
             placeholder="0"
             value={formik.values.bidPrice}
             onChange={formik.handleChange}
+            error={formik.touched.bidPrice && Boolean(formik.errors.bidPrice)}
+            helperText={formik.touched.bidPrice && formik.errors.bidPrice}
             InputProps={{
               // startAdornment: (
               //   <InputAdornment id="currency" position="start">
@@ -74,7 +86,11 @@ const AddBidAmmount = (props) => {
               label="Enter your 10 digits Mobile number"
               value={formik.values.phoneNo}
               onChange={formik.handleChange}
+              error={formik.touched.phoneNo && Boolean(formik.errors.phoneNo)}
+              helperText={formik.touched.phoneNo && formik.errors.phoneNo}
               size="small"
+              error={formik.touched.phoneNo && Boolean(formik.errors.phoneNo)}
+              helperText={formik.touched.phoneNo && formik.errors.phoneNo}
               InputLabelProps={{
                 shrink: true,
               }}
@@ -88,6 +104,8 @@ const AddBidAmmount = (props) => {
               label="Enter your Name*"
               value={formik.values.name}
               onChange={formik.handleChange}
+              error={formik.touched.name && Boolean(formik.errors.name)}
+              helperText={formik.touched.name && formik.errors.name}
               size="small"
               InputLabelProps={{
                 shrink: true,
