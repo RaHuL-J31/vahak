@@ -1,5 +1,4 @@
 import React from "react";
-
 const Header = ({ step }) => {
   return (
     <div className="header">
