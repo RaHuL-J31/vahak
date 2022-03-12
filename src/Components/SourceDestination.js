@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { TextField, MenuItem, Button } from "@mui/material";
@@ -6,7 +6,7 @@ import { TextField, MenuItem, Button } from "@mui/material";
 import Banner from "./Banner";
 
 const validationSchema = yup.object({
-  source: yup.string("Enter your email").required("Email is required"),
+  source: yup.string().required(),
 });
 
 const SourceDestination = (props) => {
@@ -18,21 +18,11 @@ const SourceDestination = (props) => {
       props.next(values);
     },
   });
-
-  //   const handleChange = (event) => {
-  //     event.preventDefault();
-  //     setCarTypeSelected(event.target.value);
-  //     if (event.target.value === "SUV") {
-  //       setPassengerCount(6);
-  //     } else {
-  //       setPassengerCount(5);
-  //     }
-  //   };
-  //   const handleSubmit = (values) => {
-  //     alert(values);
-  //     console.log(values);
-  //     props.next(values);
-  //   };
+  useEffect(() => {
+    formik.values.carType == "SUV"
+      ? (formik.values.passengers = 6)
+      : (formik.values.passengers = 5);
+  }, [formik.values.carType]);
 
   const carOptions = [
     {
