@@ -50,7 +50,7 @@ const VerifyOtp = (props) => {
         <hr />
         <div className="otp-div min-width">
           <span>
-            We've sent OTP to your mobile number.Pkease enter it below to submit
+            We've sent OTP to your mobile number.Please enter it below to submit
             your bid <b>{formik.values.phoneNo}</b>{" "}
             <button
               onClick={() => props.prev(formik.values)}
